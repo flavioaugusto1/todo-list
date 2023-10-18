@@ -1,4 +1,4 @@
-import { View, Image, TextInput, TouchableOpacity, Text } from "react-native"
+import { View, Image, TextInput, TouchableOpacity, FlatList } from "react-native"
 import { styles } from "./styles"
 import { TaskStatus } from "../../components/TaskStatus"
 import { Tasks } from "../../components/Tasks"
@@ -30,7 +30,19 @@ export function Home() {
 
         <TaskStatus />
 
+
+        {/* <FlatList
+          keyExtractor={task => task}
+          renderItem={({ task }) => (
+            <Tasks 
+              name={task}
+            />
+          )}
+          ListEmptyComponent={() => {}}
+        /> */}
+
         <Tasks />
+
       </View>
     </View>
   )

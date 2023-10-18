@@ -1,4 +1,4 @@
-import { View, Text } from "react-native"
+import { View, Image } from "react-native"
 import { styles } from "./styles"
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 import { useState } from "react";
@@ -17,6 +17,10 @@ export function Tasks() {
         innerIconStyle={{ borderWidth: 2 }}
         onPress={() => setCheckboxState(!checkboxState)}
         textStyle={checkboxState ? styles.text : styles.textDisabled}
+      />
+      <Image
+        source={require('../../../assets/trash.png')}
+        style={styles.trash}
       />
     </View>
   )

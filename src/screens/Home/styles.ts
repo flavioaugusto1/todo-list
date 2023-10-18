@@ -30,6 +30,7 @@ export const styles = StyleSheet.create({
     padding: 20,
     color: '#F2F2F2',
     borderWidth: 1,
+    fontSize: 16
   },
   addTask: {
     padding: 20,
