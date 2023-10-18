@@ -29,18 +29,18 @@ export function Home() {
     Alert.alert('Remover', 'Deseja remover essa tarefa?', [
       {
         text: 'Sim',
-        onPress: () => setTask(prevState => prevState.filter(task => {
-          task !== selectedTask
+        onPress: () => {
+          setTask(prevState => prevState.filter(task => (task !== selectedTask)))
           setTaskCreated(prevState => prevState - 1)
-        }))
+        }
       },
       {
         text: 'Não',
         style: 'cancel'
       }
     ])
-  }
 
+  }
 
   return (
     <View style={styles.container}>
@@ -85,8 +85,6 @@ export function Home() {
           )}
 
         />
-
-
       </View>
     </View>
   )

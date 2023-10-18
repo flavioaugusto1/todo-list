@@ -3,6 +3,7 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
+    height: '100%',
     backgroundColor: '#1A1A1A',
   },
   header: {
@@ -50,11 +51,5 @@ export const styles = StyleSheet.create({
   finishedTask: {
     color: '#8284FA',
     backgroundColor: 'red'
-  },
-  item: {
-    marginVertical: 8,
-    marginHorizontal: 16,
-    marginBottom: 10
   }
-
 })
