@@ -15,8 +15,8 @@ export const styles = StyleSheet.create({
   wrap: {
     padding: 24,
     justifyContent: "center",
-    alignItems: "center",
-    marginTop: -100
+    marginTop: -100,
+    marginBottom: 10
   },
   form: {
     flexDirection: "row",
@@ -50,6 +50,11 @@ export const styles = StyleSheet.create({
   finishedTask: {
     color: '#8284FA',
     backgroundColor: 'red'
+  },
+  item: {
+    marginVertical: 8,
+    marginHorizontal: 16,
+    marginBottom: 10
   }
 
 })
