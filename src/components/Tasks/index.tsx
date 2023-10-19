@@ -26,10 +26,13 @@ export function Tasks({ name, onRemove, markedTask, unMarkedTask }: Props) {
           setCheckboxState(!checkboxState)
           checkboxState ? markedTask() : unMarkedTask()
         }}
-        textStyle={checkboxState ? styles.text : styles.textDisabled }
+        textStyle={checkboxState ? styles.text : styles.textDisabled}
       />
       <TouchableOpacity onPress={() => {
         onRemove()
+        if(!checkboxState){
+          unMarkedTask()
+        }
       }}>
         <Image
           source={require('../../../assets/trash.png')}

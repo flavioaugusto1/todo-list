@@ -35,10 +35,12 @@ export function Home() {
       },
       {
         text: 'Não',
+        onPress: () => {
+          markedTask()
+        },
         style: 'cancel'
       }
     ])
-
   }
 
   function markedTask() {

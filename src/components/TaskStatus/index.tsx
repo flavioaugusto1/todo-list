@@ -16,7 +16,7 @@ export function TaskStatus({ created, finished }: Props) {
 
       <View style={styles.taskIndicator}>
         <Text style={styles.finishedTask}>Concluídas</Text>
-        <Text style={styles.numberIndicatorTask}>{finished} de {created}</Text>
+        <Text style={styles.numberIndicatorTask}>{finished}</Text>
       </View>
     </View>
   )
