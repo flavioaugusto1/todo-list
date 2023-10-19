@@ -3,21 +3,23 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    height: '100%',
+    paddingBottom: 0,
     backgroundColor: '#1A1A1A',
   },
   header: {
+    width: '100%',
     backgroundColor: "#0D0D0D",
     height: 180,
     justifyContent: "center",
     alignItems: "center",
-    marginBottom: 40
+    marginBottom: 40,
   },
   wrap: {
+    flex: 1,
     padding: 24,
+    paddingBottom: 0,
     justifyContent: "center",
     marginTop: -100,
-    marginBottom: 10
   },
   form: {
     flexDirection: "row",
@@ -51,5 +53,22 @@ export const styles = StyleSheet.create({
   finishedTask: {
     color: '#8284FA',
     backgroundColor: 'red'
+  },
+  listEmpty: {
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 68,
+    gap: 16
+  },
+  titleListEmpty: {
+    textAlign: "center",
+    fontSize: 16,
+    fontWeight: "bold",
+    color: '#808080'
+  },
+  textListEmpty: {
+    textAlign: "center",
+    fontSize: 15,
+    color: '#808080'
   }
 })

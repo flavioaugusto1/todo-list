@@ -5,10 +5,12 @@ import { useState } from "react";
 
 type Props = {
   name: string,
-  onRemove: () => void
+  onRemove: () => void,
+  markedTask: () => void,
+  unMarkedTask: () => void
 };
 
-export function Tasks({ name, onRemove }: Props) {
+export function Tasks({ name, onRemove, markedTask, unMarkedTask }: Props) {
   const [checkboxState, setCheckboxState] = useState(true)
 
   return (
@@ -20,10 +22,15 @@ export function Tasks({ name, onRemove }: Props) {
         text={name}
         iconStyle={{ borderColor: "blue" }}
         innerIconStyle={{ borderWidth: 2 }}
-        onPress={() => setCheckboxState(!checkboxState)}
-        textStyle={checkboxState ? styles.text : styles.textDisabled}
+        onPress={() => {
+          setCheckboxState(!checkboxState)
+          checkboxState ? markedTask() : unMarkedTask()
+        }}
+        textStyle={checkboxState ? styles.text : styles.textDisabled }
       />
-      <TouchableOpacity onPress={onRemove}>
+      <TouchableOpacity onPress={() => {
+        onRemove()
+      }}>
         <Image
           source={require('../../../assets/trash.png')}
           style={styles.trash}

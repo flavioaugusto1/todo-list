@@ -3,7 +3,7 @@ import { styles } from "./style"
 
 type Props = {
   created: number,
-  finished: number
+  finished: number,
 }
 
 export function TaskStatus({ created, finished }: Props) {
@@ -16,7 +16,7 @@ export function TaskStatus({ created, finished }: Props) {
 
       <View style={styles.taskIndicator}>
         <Text style={styles.finishedTask}>Concluídas</Text>
-        <Text style={styles.numberIndicatorTask}>{finished}</Text>
+        <Text style={styles.numberIndicatorTask}>{finished} de {created}</Text>
       </View>
     </View>
   )

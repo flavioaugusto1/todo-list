@@ -1,4 +1,4 @@
-import { View, Image, TextInput, TouchableOpacity, FlatList, Alert } from "react-native"
+import { View, Image, TextInput, TouchableOpacity, FlatList, Alert, Text } from "react-native"
 import { styles } from "./styles"
 import { TaskStatus } from "../../components/TaskStatus"
 import { Tasks } from "../../components/Tasks"
@@ -9,7 +9,6 @@ export function Home() {
   const [taskDesc, setTaskDesc] = useState('')
   const [taskCreated, setTaskCreated] = useState(0)
   const [taskFinished, setTaskFinished] = useState(0)
-
 
   function handleTaskAdd() {
     if (taskDesc == '') {
@@ -40,6 +39,14 @@ export function Home() {
       }
     ])
 
+  }
+
+  function markedTask() {
+    setTaskFinished(prevState => prevState + 1)
+  }
+
+  function unMarkedTask() {
+    setTaskFinished(prevState => prevState - 1)
   }
 
   return (
@@ -81,9 +88,20 @@ export function Home() {
             <Tasks
               name={item}
               onRemove={() => handleTaskFinished(item)}
+              markedTask={() => markedTask()}
+              unMarkedTask={() => unMarkedTask()}
             />
           )}
-
+          showsVerticalScrollIndicator={false}
+          ListEmptyComponent={() => (
+            <View style={styles.listEmpty}>
+              <Image source={require('../../../assets/clipboard.png')} />
+              <View>
+                <Text style={styles.titleListEmpty}>Você ainda não tem tarefas cadastradas</Text>
+                <Text style={styles.textListEmpty}>Crie tarefas e organize seus itens a fazer</Text>
+              </View>
+            </View>
+          )}
         />
       </View>
     </View>
