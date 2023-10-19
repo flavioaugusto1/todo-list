@@ -17,15 +17,15 @@ export function Tasks({ name, onRemove, markedTask, unMarkedTask }: Props) {
     <View style={styles.container}>
       <BouncyCheckbox
         size={20}
-        fillColor="#4EA8DE"
+        fillColor="#5E60CE"
         unfillColor="transparent"
         text={name}
-        iconStyle={{ borderColor: "blue" }}
-        innerIconStyle={{ borderWidth: 2 }}
+        innerIconStyle={ checkboxState ? {borderColor: '#4EA8DE', borderWidth: 2} :  {borderColor: 'transparent'}}
         onPress={() => {
           setCheckboxState(!checkboxState)
           checkboxState ? markedTask() : unMarkedTask()
         }}
+
         textStyle={checkboxState ? styles.text : styles.textDisabled}
       />
       <TouchableOpacity onPress={() => {
