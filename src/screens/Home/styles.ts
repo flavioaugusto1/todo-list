@@ -57,8 +57,10 @@ export const styles = StyleSheet.create({
   listEmpty: {
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 68,
-    gap: 16
+    gap: 16,
+    borderTopWidth: 1,
+    paddingTop: 68,
+    borderColor: '#333333'
   },
   titleListEmpty: {
     textAlign: "center",

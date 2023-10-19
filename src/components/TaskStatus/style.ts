@@ -7,8 +7,6 @@ export const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     paddingBottom: 24,
-    borderBottomWidth: 1,
-    borderColor: '#333333'
   },
   taskIndicator: {
     flexDirection: 'row',
