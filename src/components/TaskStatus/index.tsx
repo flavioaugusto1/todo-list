@@ -1,5 +1,6 @@
 import { View, Text } from "react-native"
 import { styles } from "./style"
+import { useFonts, Inter_700Bold } from "@expo-google-fonts/inter"
 
 type Props = {
   created: number,
@@ -7,6 +8,10 @@ type Props = {
 }
 
 export function TaskStatus({ created, finished }: Props) {
+  const [fontLoeaded] = useFonts({
+    Inter_700Bold
+  })
+
   return (
     <View style={styles.taskStatus}>
       <View style={styles.taskIndicator}>

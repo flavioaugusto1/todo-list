@@ -24,7 +24,7 @@ export const styles = StyleSheet.create({
   form: {
     flexDirection: "row",
     gap: 4,
-    marginBottom: 32
+    marginBottom: 32,
   },
   input: {
     flex: 1,
@@ -33,7 +33,9 @@ export const styles = StyleSheet.create({
     padding: 20,
     color: '#F2F2F2',
     borderWidth: 1,
-    fontSize: 16
+    fontSize: 16,
+    textDecorationLine: "none",
+    fontFamily: 'Inter_400Regular'
   },
   addTask: {
     padding: 20,
@@ -48,11 +50,10 @@ export const styles = StyleSheet.create({
     justifyContent: "space-between",
     borderBottomWidth: 1,
     paddingBottom: 20,
-    borderColor: '#333333'
+    borderColor: '#333333',
   },
   finishedTask: {
     color: '#8284FA',
-    backgroundColor: 'red'
   },
   listEmpty: {
     justifyContent: "center",
@@ -60,17 +61,18 @@ export const styles = StyleSheet.create({
     gap: 16,
     borderTopWidth: 1,
     paddingTop: 68,
-    borderColor: '#333333'
+    borderColor: '#333333',
   },
   titleListEmpty: {
     textAlign: "center",
     fontSize: 16,
-    fontWeight: "bold",
-    color: '#808080'
+    color: '#808080',
+    fontFamily: 'Inter_700Bold'
   },
   textListEmpty: {
     textAlign: "center",
-    fontSize: 15,
-    color: '#808080'
+    fontSize: 14,
+    color: '#808080',
+    fontFamily: 'Inter_400Regular'
   }
 })

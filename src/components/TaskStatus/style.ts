@@ -15,8 +15,8 @@ export const styles = StyleSheet.create({
   },
   textCreated: {
     color: '#4EA8DE',
-    fontWeight: "bold",
-    fontSize: 16
+    fontSize: 16,
+    fontFamily: 'Inter_700Bold'
   },
   numberIndicatorTask: {
     backgroundColor: '#333333',
@@ -26,11 +26,11 @@ export const styles = StyleSheet.create({
     paddingLeft: 8,
     paddingRight: 8,
     borderRadius: 50,
-    fontWeight: "bold"
+    fontFamily: 'Inter_700Bold'
   },
   finishedTask: {
     color: '#8284FA',
-    fontWeight: "bold",
-    fontSize: 16
+    fontSize: 16,
+    fontFamily: 'Inter_700Bold'
   }
 })

@@ -2,6 +2,7 @@ import { View, Image, TouchableOpacity } from "react-native"
 import { styles } from "./styles"
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 import { useState } from "react";
+import { useFonts, Inter_400Regular, Inter_700Bold } from '@expo-google-fonts/inter'
 
 type Props = {
   name: string,
@@ -12,6 +13,14 @@ type Props = {
 
 export function Tasks({ name, onRemove, markedTask, unMarkedTask }: Props) {
   const [checkboxState, setCheckboxState] = useState(true)
+  const  [fontLoaded] = useFonts({
+    Inter_400Regular,
+    Inter_700Bold
+  })
+
+  if(!fontLoaded){
+    return null
+  }
 
   return (
     <View style={styles.container}>
