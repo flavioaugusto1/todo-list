@@ -1,35 +1,36 @@
-import { StyleSheet } from "react-native";
+import styled, { css } from "styled-components/native";
 
-export const styles = StyleSheet.create({
-  container: {
-    padding: 20,
-    backgroundColor: '#262626',
-    borderRadius: 8,
-    borderWidth: 1,
-    borderColor: '#333333',
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-around",
-    marginVertical: 10,
-    marginTop: 0,
-  },
-  text: {
-    width: 220,
-    flexWrap: "wrap",
-    textAlign: "justify",
-    color: '#F2F2F2',
-    fontFamily: 'Inter_400Regular'
-  },
-  textDisabled: {
-    width: 220,
-    flexWrap: "wrap",
-    textAlign: "justify",
-    color: '#808080',
-    fontFamily: 'Inter_400Regular'
-  },
-  trash: {
-    width: 16,
-    height: 16,
-    objectFit: "contain",
-  }
-})
+export type TextTypeStyleProps = "ENABLE" | "DISABLED";
+
+type Props = {
+  type: TextTypeStyleProps;
+};
+
+export const Container = styled.View`
+  padding: 20px;
+  border-radius: 6px;
+
+  background-color: ${({ theme }) => theme.COLORS.GRAY_500};
+  border: 1px solid ${({ theme }) => theme.COLORS.GRAY_400};
+
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 0;
+`;
+
+export const Text = styled.Text<Props>`
+  width: 220px;
+  flex-wrap: wrap;
+  text-align: justify;
+
+  ${({ theme, type }) => css`
+    font-size: ${theme.FONT_SIZE.MD}px;
+    color: ${type === "ENABLE" ? theme.COLORS.GRAY_100 : theme.COLORS.GRAY_300};
+    font-family: ${theme.FONT_FAMILY.REGULAR};
+  `}
+`;
+
+export const TextDisabled = styled.Text`
+  width: 200px;
+`;

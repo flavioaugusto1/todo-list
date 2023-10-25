@@ -38,7 +38,7 @@ export const styles = StyleSheet.create({
     fontFamily: 'Inter_400Regular'
   },
   addTask: {
-    padding: 20,
+    padding: 18,
     backgroundColor: '#1E6F9F',
     borderRadius: 6,
     justifyContent: "center"

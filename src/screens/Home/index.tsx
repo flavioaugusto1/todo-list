@@ -3,22 +3,13 @@ import { styles } from "./styles"
 import { TaskStatus } from "../../components/TaskStatus"
 import { Tasks } from "../../components/Tasks"
 import { useState } from "react"
-import { useFonts, Inter_400Regular, Inter_700Bold } from '@expo-google-fonts/inter'
 
 export function Home() {
   const [task, setTask] = useState<string[]>([])
   const [taskDesc, setTaskDesc] = useState('')
   const [taskCreated, setTaskCreated] = useState(0)
   const [taskFinished, setTaskFinished] = useState(0)
-  const  [fontLoaded] = useFonts({
-    Inter_400Regular,
-    Inter_700Bold
-  })
-
-  if(!fontLoaded){
-    return null
-  }
- 
+  
   function handleTaskAdd() {
     if (taskDesc == '') {
       return Alert.alert('Tarefa vazia', 'Para adicionar uma tarefa é necessário que preencha o campo.')
